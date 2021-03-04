@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.start{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+}
+.tcase{
+    padding: 10px;
+    margin: 10px;
+    clear: left;
+}
+.tincome{
+    padding: 10px;
+    float: left;
+}
+.texpanse{
+    padding: 10px;
+    margin-left: 100px;
+}
+ .amount{
+    display: grid;
+    grid-template-columns: 100px 100px;
+} 

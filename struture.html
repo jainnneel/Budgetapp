@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            /* background: url('image.jpg'); */
+        }
+        body{
+            background: url('image3.jpg'); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-blend-mode:darken;
+        }
+        .main{
+            display: grid;
+            grid-template-rows: 100px 60px 60px 1fr;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 20px;
+            align-items: center;
+            /* justify-content: center; */
+            justify-items: center;
+        }
+        
+        .budget{
+            grid-column: 1/-1;
+            grid-row: 1/2;
+            font-size: 80px;
+            height: 100px;
+            width: 500px;
+            display: flex;
+            padding: 10px;
+            color: rgb(255, 255, 255);
+        }
+        .incexp{
+            grid-column:1/-1 ;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            font-size: 40px;
+            padding: 10px;
+            color: rgba(255, 255, 255)
+        }
+        .filds{
+            grid-column: 1/-1;
+            padding: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            display: flex;
+            letter-spacing: 0.1rem;
+        }
+        .btn{
+            padding: 10px;
+            cursor: pointer;
+            background-color:rgb(233, 171, 171);
+            color:black;
+            border: none;
+            /* margin-top: 35px; */
+        }
+        .btn:hover{
+            color: white;
+            background-color: #333;
+            border: 1px solid blue;
+           
+        }
+        .show{
+            grid-column: 1/-1;
+            display: flex;
+            padding: 20px;
+        }
+        .income{
+            display: flex;
+        }
+        .expanses{
+            height: 80px;
+            display: flex;
+        }
+        .type{
+            /* margin: 15px; */
+            padding: 10px;
+            border: 1px solid rgb(15, 1, 29);
+        }
+        .filds input{
+            /* margin: 5px; */
+            padding:10px;
+            border: 1px solid rgb(15, 1, 29);
+            background-color: blanchedalmond;
+        }
+        .show div{
+            margin: 20px;
+        }
+        .show div table,th,td{
+            /* border: 2px solid black; */
+            padding: 10px;
+            letter-spacing: 0.1rem;
+        }
+        .show div th{
+            /* border: 2px solid black; */
+            padding: 15px;
+            font-size: 25px;
+            font-weight: bolder;
+            background-color: rgba(12, 11, 12, 0.712);
+            color: thistle;
+        }
+        .show div td{
+            /* border: 2px solid black; */
+            padding: 10px;
+        }
+        .show div table tr{
+            color: white;
+            background-color:rgb(8, 3, 39) ;
+        }
+        .show div table tr:hover{
+            color: white;
+            background-color:#333 ;
+        }
+        .show div b{
+            margin-left:140px ;
+            font-weight: bolder;
+            font-size: 30px;
+            color: white;
+            letter-spacing: 0.1rem;
+        }
+        .show div b:hover{
+            color: rgb(74, 15, 236);
+        }
+        .types,.incs,.exps,.adds{
+            margin-left: 15px;
+        }
+
+        @media(max-width: 1120px){
+            .main{
+            display: grid;
+            grid-template-rows: 100px 60px 150px 1fr;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 20px;
+            align-items: center;
+            justify-items: center;
+            } 
+            .filds{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            width: auto;
+            /* padding: 20px; */
+            font-size: 30px;
+            font-weight: bold;
+            color:#333;
+            letter-spacing: 0.1rem;
+            margin: auto;
+            background-color: rgb(255, 255, 255);
+            /* opacity: 0.4; */
+            box-shadow: 5px 5px 5px rgb(71, 70, 70,1);
+             }
+             .filds div{
+                 margin: auto;
+             }
+             .types{
+                 grid-row: 1/2;
+                 grid-column: 1/-1;
+             }
+             .incs{
+                 grid-row: 2/3;
+                 grid-column: 1/-1;
+             }
+             .exps{
+                 grid-row: 3/4;
+                 grid-column: 1/-1;
+             }
+             .adds{
+                 grid-row: 4/5;
+                 grid-column: 1/-1;
+             }
+             /* .type{
+                 grid-row: 2/;
+                 grid-column: 2/3;
+             }
+             .inc{
+                 grid-row: 4/5;
+                 grid-column: 2/3;
+             }
+             .exp{
+                 grid-row: 5/6;
+                 grid-column: 2/3;
+             }
+             .add{
+                 grid-row: 6/7;
+                 grid-column: 2/3;
+             } */
+             .show{
+                margin-top: 100px;
+            }
+
+        } 
+
+        @media(max-width: 975px){
+            .main{
+            display: grid;
+            grid-template-rows: 100px 60px 150px 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 20px;
+            align-items: center;
+            justify-items: center;
+            } 
+            .show{
+            grid-column: 1/-1;
+            display: grid; 
+            grid-template-rows: 1fr 1fr;   
+            padding: 20px;
+            margin: auto;
+            }
+            .incometb{
+                grid-column: 1/-1;
+                grid-row:1/2;
+            }
+            .expansetb{
+                grid-column: 1/-1;
+                grid-row:2/3;
+            }
+            .show{
+                margin-top: 40px;
+            }
+        }
+        @media(max-width: 550px){
+            .main{
+                display: grid;
+                grid-template-rows: 100px 190px 100px 1fr;
+                grid-template-columns: 120px 120px 120px 200px;
+                grid-gap: 20px;
+                align-items: center;
+                /* justify-content: center; */
+                justify-items: center;
+            }
+            .budget{
+            grid-column: 2/4;
+            /* grid-row: 1/2; */
+            font-size: 50px;
+            height: 80px;
+            width: auto;
+            /* display: flex; */
+            padding: 10px;
+            color:rgb(255, 255, 255);
+            margin-left:auto;
+            margin-right:auto;
+            }
+            .incexp{
+                grid-column:1/-1 ;
+                display: grid;
+                grid-template-columns: repeat(1,1fr);
+                grid-template-rows: repeat(2,1fr);
+                font-size: 45px;
+                 /* padding: 10px; */
+                color: rgba(255, 255, 255);
+            }
+            .income{
+                grid-row: 1/2;
+                
+            }
+            .expanses{
+                grid-row: 2/3;
+            }
+            .show{
+                margin-top: 100px;
+            }
+            }
+      
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="budget">
+        <b>Budget:</b><p class="tcase">+500</p>
+    </div>
+    <div class="incexp">
+        <div class="income"><b>Income:</b><p  class="tincome">+500</p></div>
+        <div class="expanses"><b>Expanses:</b><p  class="texpanse">+200</p></div>
+    </div>
+    <div class="filds">
+        <div class="types">
+        Type:<select class="type"  id="">
+            <option value="inc">Income</option>
+            <option value="exp">Expanses</option>
+            </select> 
+        </div> 
+        <div class="incs">
+         Description:<input type="text" class="inc desc">
+        </div>
+        <div class="exps">
+         Value(In rupees):<input type="number" class="exp amt" > 
+        </div>
+        <div class="adds">
+         <button class="btn" id="submit">Add</button> 
+        </div>
+     </div>
+    <div class="show">
+        <div class="incometb">
+            <b>Income</b>
+            <table id="tableincome">
+                <tr>
+                    <th>Id</th>
+                    <th>Description</th>
+                    <th>value</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+                </tr>
+                
+            </table>
+        </div>
+        <div class="expansetb">
+            <b>Expanse</b>
+            <table id="tableexpanses">
+                <tr>
+                    <th>Id</th>
+                    <th>Description</th>
+                    <th>value</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+                </tr>
+                
+            </table>
+        </div>
+    </div>
+    </div>
+    <script src="app.js"></script> 
+</body>
+</html>

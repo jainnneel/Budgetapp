@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+
+    <title>Document</title>
+</head>
+<body>
+   <div class="start">
+
+    Current Budget:   <p class="tcase"></p>
+    <div class="amount">
+    Total-Income:  <p class="tincome"></p>
+    Total-Expanses: <p class="texpanse"></p>
+    
+   </div>
+ <div>
+    <select class="type">
+    <option value="inc">income</option>
+    <option value="exp">expanse</option>
+ </select>
+ <input class="desc" type="text" placeholder="desription" >
+ <input class="amt" type="number" placeholder="amount" >
+ <button id="submit">add</button>
+</div>
+<p ></p>
+<p ></p>
+
+<div class="main">    
+ <table id="tableincome" border="1px solid black">
+    <tr>
+     <p>income</p>
+    <tr>
+     <th>id</th>
+     <th>description</th>
+     <th>value</th>
+    </tr>
+    </tr> 
+ </table>
+
+ <table id="tableexpanses" border="1px solid black">
+    <tr>
+     <p>expanse</p>
+     <th>id</th>
+     <th>description</th>
+     <th>value</th>
+    </tr>   
+ </table>
+</div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script src="db.js"></script>
+<!-- <script src="app.js"></script>     -->
+</body>
+</html>
+
